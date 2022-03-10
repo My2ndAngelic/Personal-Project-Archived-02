@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ThreadExampleTest {
     private long start = 1;
-    private long end = 6942044;
+    private long end = 69420;
     private long result = (start + end) * (end - start + 1) /2;
 
     @Test
