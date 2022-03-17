@@ -1,11 +1,11 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ThreadExampleTest {
-    private long start = 1;
-    private long end = 69420;
-    private long result = (start + end) * (end - start + 1) /2;
+    private final long start = 1;
+    private final long end = 69420;
+    private final long result = (start + end) * (end - start + 1) / 2;
 
     @Test
     void addSingleThread() {

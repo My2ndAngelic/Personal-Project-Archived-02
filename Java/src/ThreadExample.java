@@ -1,13 +1,13 @@
 import java.util.stream.LongStream;
 
-public class ThreadExample extends Thread{
+public class ThreadExample extends Thread {
     public static long addSingleThread(long start, long end) {
 //        int result = 0;
 //        for (int i = start; i <= end; i++) {
 //            result += i;
 //        }
 //        return result;
-        return LongStream.range(start, end+1).sum();
+        return LongStream.range(start, end + 1).sum();
 
     }
 
@@ -26,7 +26,7 @@ public class ThreadExample extends Thread{
 //
 //        t1.start();
 //        t2.start();
-        return LongStream.range(start, end+1).parallel().sum();
+        return LongStream.range(start, end + 1).parallel().sum();
     }
 
     public static void main(String[] args) {
