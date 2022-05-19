@@ -33,16 +33,6 @@ public class LinearAlgebraUtils {
         return false;
     }
 
-    public static double[] rowExtractor(double[][] input, int no) {
-        double[] output = new double[input[no].length];
-        System.arraycopy(input[no], 0, output, 0, input[no].length);
-        return output;
-    }
-
-    public static double[] columnExtractor(double[][] input, int no) {
-        return new double[input.length];
-    }
-
     public static boolean dimensionAgreement(double[][] in1, double[][] in2) {
         int a = in1[0].length;
         for (double[] ints : in1) {
@@ -51,6 +41,16 @@ public class LinearAlgebraUtils {
             }
         }
         return in2.length == a;
+    }
+
+    public static double[] rowExtractor(double[][] input, int no) {
+        double[] output = new double[input[no].length];
+        System.arraycopy(input[no], 0, output, 0, input[no].length);
+        return output;
+    }
+
+    public static double[] columnExtractor(double[][] input, int no) {
+        return new double[input.length];
     }
 
     public static double vectorDotProduct(double[] a, double[] b) {
@@ -69,14 +69,6 @@ public class LinearAlgebraUtils {
             throw new ArithmeticException("Check your matrix.");
         }
         return rowLength(a) == columnLength(a);
-    }
-
-    public static int rowLength(double[][] a) {
-        return rowExtractor(a, 0).length;
-    }
-
-    public static int columnLength(double[][] a) {
-        return columnExtractor(a, 0).length;
     }
 
     // Start SOF part: https://stackoverflow.com/questions/16602350/calculating-matrix-determinant
@@ -112,7 +104,6 @@ public class LinearAlgebraUtils {
         }
         return m;
     }
-    // End SOF part
 
     public static double determinant(double[][] a) {
         if (!isSquareMatrix(a)) {
@@ -138,6 +129,15 @@ public class LinearAlgebraUtils {
             }
             return c;
         }
+    }
+    // End SOF part
+
+    public static int rowLength(double[][] a) {
+        return rowExtractor(a, 0).length;
+    }
+
+    public static int columnLength(double[][] a) {
+        return columnExtractor(a, 0).length;
     }
 
     public static double[][] subtract(double[][] a, double[][] b) {

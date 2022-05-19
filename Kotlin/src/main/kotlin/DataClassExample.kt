@@ -14,10 +14,4 @@ class DataClassExample {
     }
 }
 
-fun main(args: Array<String>) {
-    val dce = DataClassExample("John")
-    println(dce.toString());
 
-    dce.name = "Cena";
-    println(dce.toString())
-}

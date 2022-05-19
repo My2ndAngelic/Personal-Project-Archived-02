@@ -3,13 +3,11 @@ package AoC2021;
 import java.util.ArrayList;
 
 public class AoC8 {
-    public static int problemOne(ArrayList<String> dataIn) {
+    public static int problemTwo(ArrayList<String> dataIn) {
         int count = 0;
         ArrayList<LeDisplay> ld = getDisplayOut(dataIn);
-        for (LeDisplay ldc : ld) {
-            switch (ldc.getLength()) {
-                case 2, 3, 4, 7 -> count++;
-            }
+        for (int i = 0; i < ld.size() - 4; i++) {
+            count += 1000 * ld.get(i).getNumber() + 100 * ld.get(i + 1).getNumber() + 10 * ld.get(i + 2).getNumber() + ld.get(i + 3).getNumber();
         }
         return count;
     }
@@ -27,13 +25,8 @@ public class AoC8 {
         return ld;
     }
 
-    public static int problemTwo(ArrayList<String> dataIn) {
-        int count = 0;
-        ArrayList<LeDisplay> ld = getDisplayOut(dataIn);
-        for (int i = 0; i < ld.size() - 4; i++) {
-            count += 1000 * ld.get(i).getNumber() + 100 * ld.get(i + 1).getNumber() + 10 * ld.get(i + 2).getNumber() + ld.get(i + 3).getNumber();
-        }
-        return count;
+    public static String[] stringSplit(String in, int o) {
+        return in.split("\\|")[o].split("\\s+");
     }
 
     public static void main(String[] args) {
@@ -54,12 +47,19 @@ public class AoC8 {
         System.out.println(ld.getNumber());
     }
 
-    public static String[] stringSplit(String in) {
-        return in.split("\\s+");
+    public static int problemOne(ArrayList<String> dataIn) {
+        int count = 0;
+        ArrayList<LeDisplay> ld = getDisplayOut(dataIn);
+        for (LeDisplay ldc : ld) {
+            switch (ldc.getLength()) {
+                case 2, 3, 4, 7 -> count++;
+            }
+        }
+        return count;
     }
 
-    public static String[] stringSplit(String in, int o) {
-        return in.split("\\|")[o].split("\\s+");
+    public static String[] stringSplit(String in) {
+        return in.split("\\s+");
     }
 }
 
@@ -84,12 +84,12 @@ class LeDisplay {
         }
     }
 
-    public String getInput() {
-        return input;
-    }
-
     private String[] theConnector(String[] code) {
         return new String[1];
+    }
+
+    public String getInput() {
+        return input;
     }
 
     public int getLength() {

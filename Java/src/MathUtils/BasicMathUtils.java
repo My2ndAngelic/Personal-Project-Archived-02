@@ -35,16 +35,12 @@ public class BasicMathUtils {
         }
     }
 
-    public static double getDecimalPart(double a) {
-        return a - getIntegerPart(a);
+    public static long floor(double a) {
+        return getIntegerPart(a);
     }
 
     public static long getIntegerPart(double a) {
         return (long) (a - (a % 1));
-    }
-
-    public static long floor(double a) {
-        return getIntegerPart(a);
     }
 
     public static long ceiling(double a) {
@@ -53,5 +49,9 @@ public class BasicMathUtils {
         } else {
             return getIntegerPart(a);
         }
+    }
+
+    public static double getDecimalPart(double a) {
+        return a - getIntegerPart(a);
     }
 }

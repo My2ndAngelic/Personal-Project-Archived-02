@@ -55,6 +55,12 @@ public class AoC5 {
         return al;
     }
 
+    public static int getSeatID(char[] chars) {
+        int a = getRow(chars);
+        int b = getColumn(chars);
+        return a * 8 + b;
+    }
+
     public static int getRow(char[] chars) {
         int a = 0;
         int b = 127;
@@ -88,11 +94,5 @@ public class AoC5 {
         } else {
             return -1;
         }
-    }
-
-    public static int getSeatID(char[] chars) {
-        int a = getRow(chars);
-        int b = getColumn(chars);
-        return a * 8 + b;
     }
 }

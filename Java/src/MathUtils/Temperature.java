@@ -5,6 +5,27 @@ import java.text.DecimalFormat;
 public class Temperature {
 
     /**
+     * Main method for testing
+     *
+     * @param args do not care
+     */
+    public static void main(String[] args) {
+        String tempK = "420.15K";
+        String tempF = "69F";
+        String tempC = "37C";
+        DecimalFormat df = new DecimalFormat("#0.00");
+        System.out.println(df.format(tempConverter(tempK, "K")));
+        System.out.println(df.format(tempConverter(tempK, "F")));
+        System.out.println(df.format(tempConverter(tempK, "C")));
+        System.out.println(df.format(tempConverter(tempF, "K")));
+        System.out.println(df.format(tempConverter(tempF, "F")));
+        System.out.println(df.format(tempConverter(tempF, "C")));
+        System.out.println(df.format(tempConverter(tempC, "K")));
+        System.out.println(df.format(tempConverter(tempC, "F")));
+        System.out.println(df.format(tempConverter(tempC, "C")));
+    }
+
+    /**
      * Convert your temperature. Support: K, F, C. Note: 1K = 273.15oC
      *
      * @param sourceString source temperature in string. Example: 420.15K, 69F, 37C
@@ -44,26 +65,5 @@ public class Temperature {
                 }
         }
         throw new IllegalArgumentException("Check your input.");
-    }
-
-    /**
-     * Main method for testing
-     *
-     * @param args do not care
-     */
-    public static void main(String[] args) {
-        String tempK = "420.15K";
-        String tempF = "69F";
-        String tempC = "37C";
-        DecimalFormat df = new DecimalFormat("#0.00");
-        System.out.println(df.format(tempConverter(tempK, "K")));
-        System.out.println(df.format(tempConverter(tempK, "F")));
-        System.out.println(df.format(tempConverter(tempK, "C")));
-        System.out.println(df.format(tempConverter(tempF, "K")));
-        System.out.println(df.format(tempConverter(tempF, "F")));
-        System.out.println(df.format(tempConverter(tempF, "C")));
-        System.out.println(df.format(tempConverter(tempC, "K")));
-        System.out.println(df.format(tempConverter(tempC, "F")));
-        System.out.println(df.format(tempConverter(tempC, "C")));
     }
 }
