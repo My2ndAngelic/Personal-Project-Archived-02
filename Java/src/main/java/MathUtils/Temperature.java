@@ -28,7 +28,7 @@ public class Temperature {
     /**
      * Convert your temperature. Support: K, F, C. Note: 1K = 273.15oC
      *
-     * @param sourceString source temperature in string. Example: 420.15K, 69F, 37C
+     * @param sourceString source temperature in String. Example: 420.15K, 69F, 37C
      * @param destTemp     destination temperature. Support: K, F, C
      * @return temperature value in double.
      */

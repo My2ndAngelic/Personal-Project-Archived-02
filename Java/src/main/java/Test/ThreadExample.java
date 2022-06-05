@@ -1,3 +1,5 @@
+package Test;
+
 import java.util.stream.LongStream;
 
 public class ThreadExample extends Thread {
